@@ -1,0 +1,20 @@
+SET NOCOUNT ON;
+USE TSQL2012;
+
+IF OBJECT_ID('dbo.T1', 'U') IS NOT NULL DROP TABLE dbo.T1;
+GO
+
+CREATE TABLE dbo.T1
+(
+	col1 VARCHAR(10) NOT NULL
+		CONSTRAINT PK_T2 PRIMARY KEY
+);
+
+INSERT INTO dbo.T1(col1)
+	VALUES('A'), ('B'), ('C'), ('D'), ('E'), ('F');
+GO
+--Does not work
+SELECT	col1
+FROM	dbo.T1
+WHERE	col1 > 'B'
+  AND	ROW_NUMBER() OVER(ORDER BY col1) <= 3;
