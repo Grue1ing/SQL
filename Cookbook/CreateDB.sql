@@ -1,13 +1,13 @@
 CREATE TABLE emp
 ( 
-	EMPNO int NOT NULL,
-	ENAME nvarchar(10) NOT NULL,
-	JOB nvarchar(10) NOT NULL,
+	EMPNO int,
+	ENAME nvarchar(10),
+	JOB nvarchar(10),
 	MGR int,
-	HIREDATE date NOT NULL,
-	SAL int NOT NULL,
+	HIREDATE date,
+	SAL int,
 	COMM int,
-	DEPTNO int NOT NULL
+	DEPTNO int
 	PRIMARY KEY (EMPNO)
 	)
 
@@ -29,9 +29,9 @@ VALUES (7369, 'SMITH', 'CLERK', 7902, '17-12-1980', 800, NULL, 20),
 
 CREATE TABLE dept
 (
-	DEPTNO int NOT NULL,
-	DNAME nvarchar(20) NOT NULL,
-	LOC nvarchar(20) NOT NULL
+	DEPTNO int,
+	DNAME nvarchar(20),
+	LOC nvarchar(20)
 	PRIMARY KEY (DEPTNO)
 )
 
